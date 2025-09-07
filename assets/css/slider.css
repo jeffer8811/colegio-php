@@ -1,0 +1,291 @@
+/* ===========================
+   🎯 Banner Slider
+=========================== */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Overlay del banner */
+.banner-overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    max-width: 600px;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.banner-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Botón en el banner */
+.btn-banner {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-banner:hover {
+    background: #002147;
+}
+
+/* ===========================
+   🎯 Controles del Slider
+=========================== */
+.slider-controls span {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+}
+
+.slider-controls .prev { left: 20px; }
+.slider-controls .next { right: 20px; }
+
+.slider-controls span:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+/* Indicadores (dots) */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.slider-dots div {
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-dots .active {
+    background: #e63946;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   🎓 Servicios Educativos
+=========================== */
+.servicios {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.servicios h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #002147;
+}
+
+.servicios .intro {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Grid de servicios */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.servicio-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servicio-card .card-content {
+    padding: 20px;
+}
+
+.servicio-card h3 {
+    margin-bottom: 10px;
+    color: #e63946;
+}
+
+.servicio-card p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Hover efecto */
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+/* =========================
+   Sección Bienvenida
+========================= */
+.bienvenida {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.bienvenida h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #0055a5;
+    font-weight: bold;
+}
+
+.bienvenida p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.bienvenida .btn-general {
+    display: inline-block;
+    background: #0055a5;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.bienvenida .btn-general:hover {
+    background: #003f7d;
+}
+
+/* =========================
+   Contacto Rápido (CTA)
+========================= */
+.cta {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #0055a5, #0077cc);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.cta p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.cta .btn-general {
+    display: inline-block;
+    background: #fff;
+    color: #0055a5;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cta .btn-general:hover {
+    background: #e0e0e0;
+}
+/* Sección Logros */
+.logros {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.logros h2 {
+  font-size: 2rem;
+  color: #002147;
+  margin-bottom: 40px;
+}
+
+.logros-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  text-align: left;
+}
+
+.logro-item {
+  background: #f8f9fa;
+  border-left: 6px solid #e63946;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.logro-item:hover {
+  transform: translateY(-5px);
+}
+
+.logro-item h3 {
+  font-size: 1.2rem;
+  color: #002147;
+  margin-bottom: 10px;
+}
+
+.logro-item p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}

@@ -1,0 +1,162 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header principal */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff; /* Fondo blanco */
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.site-header .logo img {
+  max-height: 60px;
+  cursor: pointer;
+}
+
+/* Menú */
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #003366;
+}
+
+/* Separadores tipo | */
+.menu ul li:not(:last-child)::after {
+  content: "|";
+  color: #003366;
+  position: absolute;
+  right: -18px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  margin-top: 10px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+.menu ul li:hover .dropdown-content {
+  display: block;
+}
+
+/* Botón de contacto (teléfono) */
+.contact-btn {
+  border: 2px solid #800000;
+  color: #800000;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #800000;
+  color: #fff;
+}
+
+/* Estilo normal */
+.menu ul li a {
+  position: relative;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Línea por defecto (hover) */
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* si la quieres arriba cambia por top: -5px; */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #e63946; /* color rojo */
+  transition: width 0.3s ease;
+}
+
+/* Cuando paso el mouse */
+.menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* Cuando está activa (la página actual) */
+.menu ul li a.active::after {
+  width: 100%;
+}
+
+/* Color activo */
+.menu ul li a.active {
+  color: #e63946;
+  font-weight: bold;
+}
+
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .menu ul li:not(:last-child)::after {
+    content: "";
+  }
+
+  .contact-btn {
+    margin-top: 10px;
+  }
+}
